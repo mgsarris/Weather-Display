@@ -3,7 +3,7 @@ import requests
 import serial
 import time
 # User must provide their own api_key and city ID which
-# are available from openweathermap's website
+# are available (for free!) from openweathermap's website
 
 api_url = 'https://api.openweathermap.org/data/2.5/weather?id='
 api_key = '&APPID='
@@ -16,7 +16,7 @@ ser = serial.Serial('COM4',9600)
 
 ser.write(bytearray(str.capitalize(json_data['weather'][0]['description'])+"\n",'us-ascii'))
 
-time.sleep(.1)
+time.sleep(.15)
 ser.write(bytearray("Now: "+str(int(json_data['main']['temp']))+
     " Min: "+str(int(json_data['main']['temp_min']))+
       " Max: "+str(int(json_data['main']['temp_max']))+"\n",'us-ascii'))
