@@ -3,7 +3,8 @@ import requests
 import serial
 import time
 # User must provide their own api_key and city ID which
-# are available (for free!) from openweathermap's website
+# are available (for free!) from openweathermap's website: 
+# https://openweathermap.org/api
 
 api_url = 'https://api.openweathermap.org/data/2.5/weather?id='
 api_key = '&APPID='
